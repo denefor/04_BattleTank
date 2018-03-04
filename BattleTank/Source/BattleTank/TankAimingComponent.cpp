@@ -3,7 +3,7 @@
 #include "TankAimingComponent.h"
 #include "TankBarrel.h"
 #include "TankTurret.h"
-#include "Engine/World.h"
+//#include "Engine/World.h"
 #include "Components/StaticMeshComponent.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -51,16 +51,16 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 	{
 		auto AimDirection = OutLaunchVelocity.GetSafeNormal();
 		MoveBarrelTowards(AimDirection);
-		auto Time = GetWorld()->GetTimeSeconds();
-		auto TankName = GetOwner()->GetName();
-		UE_LOG(LogTemp, Warning, TEXT("%f: Aim solution found by %s -> %s (HitLocation = %s)"), Time, *TankName, *OutLaunchVelocity.ToString(), *HitLocation.ToString());
+		//auto Time = GetWorld()->GetTimeSeconds();
+		//auto TankName = GetOwner()->GetName();
+		//UE_LOG(LogTemp, Warning, TEXT("%f: Aim solution found by %s -> %s (HitLocation = %s)"), Time, *TankName, *OutLaunchVelocity.ToString(), *HitLocation.ToString());
 	}
 	else
 	{
 		// If no solution found do nothing
-		auto Time = GetWorld()->GetTimeSeconds();
-		auto TankName = GetOwner()->GetName();
-		UE_LOG(LogTemp, Warning, TEXT("%f: No aim solve found by %s"), Time, *TankName);
+		//auto Time = GetWorld()->GetTimeSeconds();
+		//auto TankName = GetOwner()->GetName();
+		//UE_LOG(LogTemp, Warning, TEXT("%f: No aim solve found by %s"), Time, *TankName);
 	}
 }
 
